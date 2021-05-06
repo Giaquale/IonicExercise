@@ -22,7 +22,7 @@
       </div>
       
       
-      <button type="button" onclick="myFunction1()"> Clicca per vedere il risultato</button>
+      <button type="button" id="btn" onclick="myFunction1()"> Clicca per vedere il risultato</button>
   
     
     
@@ -50,7 +50,7 @@
           </div>
           
           <div class="container" style="background-color:#f1f1f1">
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <button type="button"  onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
           </div>
         </form>
@@ -69,6 +69,7 @@
             </script>
   
             <p id="demo"></p>
+            <p id="p"></p>
         <script>
           var txt = "CIAO  !!!";
           var  revTxt = "";
@@ -82,7 +83,7 @@
         <script src="test.js" type="text/javascript"></script>
             <!--funzione di operazione tra 2 stringhe-->
         <script>
-
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
              function myFunction1(){
         
 
@@ -91,51 +92,27 @@
             
         if (change.textContent == txt) {
             change.innerHTML = revTxt;
-         
+            $(change).ready(function(){
+              $("#btn").click(function(){
+              $("p").append("<b>" + revTxt + "</b>");
+          });
+        });
         } else {
             //reverse here
             change.innerHTML = txt;
-           
+            $(change).ready(function(){
+             $("#btn").click(function(){
+               $("p").append("<b>" + txt  + "</b>");
+          });
+        });
         }
        
-        // Ciao da Ale ;)
-        // Ciao da Ale ;)
-
-
-    
-       // var revTxt = ""
-
-     /*   function reverseString(str) {
-    Il metodo split () divide un oggetto String in 
-    un array di stringhe separando la stringa in sottostringhe.
-    var splitString = str.split(""); 
- 
-    Il metodo reverse () inverte un array in posizione.
-    Il primo elemento dell'array diventa l'ultimo e l'ultimo diventa il primo.
-    var reverseArray = splitString.reverse(); 
-    
-    Il metodo join () unisce tutti gli elementi di un array in una stringa.
-    var joinArray = reverseArray.join(""); 
-    
-    
-    return joinArray;
-}
- 
-    revTxt = joinArray;
-    reverseString(txt);
- */
-      
- //  document.getElementById("demo").innerHTML = revTxt;
-}
-        /* se il testo è uguale ad una stringa vuota il testo è uguale al testo
-        if(txt == ""){
-            txt = txt
-        }else{
-            se invece non è vuoto quindi risulterà una stringa piena il testo sarà uguale al testo reverse
-            txt = revTxt
-                
-            }*/
         
+        
+
+
+    
+      }
     
              
         </script>

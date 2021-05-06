@@ -1,12 +1,42 @@
 <script>
      
-     var txt 
+     var txt = "CIAO !!!"
 
         var  revTxt = "";
-        for (var i = txt.length() - 1; i >= 0; i--){
+        for (var i = txt.length - 1; i >= 0; i--){
        revTxt = revTxt + txt.charAt(i);
         }
         revTxt;
 
         
         </script>
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            
+        $(document).ready(function(){
+          $("#btn1").click(function(){
+            $("p").append(" <b> "+ txt + "</b>.");
+          });
+        });
+        $(document).ready(function(){
+          $("#btn2").click(function(){
+            $("p").append(" <b> "+ revTxt + "</b>.");
+          });
+        });
+        </script>
+        </head>
+        <body>
+        
+        <p></p>
+       
+        
+        <button id="btn1">Append text</button>
+        <button id="btn2">Append text</button>
+       
+        
+        </body>
+        </html>
+        
