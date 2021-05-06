@@ -15,22 +15,30 @@
         <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
+         let change = document.getElementById("prova");
             
+          //  if (change.length == 0) {
+            //    change.innerHTML = revTxt;
         $(document).ready(function(){
           $("#btn1").click(function(){
+            $("p").append(" <b> "+ revTxt + "</b>.");
+          });
+        });  
+    // } else {
+            //reverse here
+       // change.innerHTML = txt;
+        $(document).ready(function(){
+          $("#btn2").click(function(){
             $("p").append(" <b> "+ txt + "</b>.");
           });
         });
-        $(document).ready(function(){
-          $("#btn2").click(function(){
-            $("p").append(" <b> "+ revTxt + "</b>.");
-          });
-        });
+    
+   // }
         </script>
         </head>
         <body>
         
-        <p></p>
+        <p id="prova"></p>
        
         
         <button id="btn1">Append text</button>

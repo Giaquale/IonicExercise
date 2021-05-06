@@ -83,28 +83,33 @@
         <script src="test.js" type="text/javascript"></script>
             <!--funzione di operazione tra 2 stringhe-->
         <script>
-        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    
              function myFunction1(){
-        
-
+              var node = document.createElement("P");
+              var textnode = document.createTextNode(txt);
+              var textnode2 = document.createTextNode(revTxt);
         // Ciao da Ale ;)
-        let change = document.getElementById("demo");
+        let change = document.getElementById("demo")
             
         if (change.textContent == txt) {
+          
             change.innerHTML = revTxt;
-            $(change).ready(function(){
-              $("#btn").click(function(){
-              $("p").append("<b>" + revTxt + "</b>");
-          });
-        });
+            node.appendChild(textnode2);
+            document.getElementById("demo").appendChild(node);
+           // $("#btn").click(function(){
+             // $("p").append("<b>" + revTxt + "</b>");
+          //});
+        //});
         } else {
             //reverse here
             change.innerHTML = txt;
-            $(change).ready(function(){
-             $("#btn").click(function(){
-               $("p").append("<b>" + txt  + "</b>");
-          });
-        });
+            node.appendChild(textnode);
+            document.getElementById("demo").appendChild(node);
+          //  $(document).ready(function(){
+            // $("#btn").click(function(){
+              // $("p").append("<b>" + txt  + "</b>");
+        //  });
+        //});
         }
        
         
