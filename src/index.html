@@ -1,18 +1,96 @@
+
+
+
+
 <!DOCTYPE html>
-<head>
-<title>index</title>
-</script> 
-</head>
-<body>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
     
-    <script>
-        function myFunction(){
-         document.getElementById("test").innerHTML = "Ciao"
-        }
+    <body>
+      
+      <!-- NAVBAR CON HREF ALLE ALTRE PAGINE-->
+      <div class="topnav" id="myTopnav">
+      <a href="js/js.html" >JS</a>
+      <a href="slide/slide.html">SLIDE</a>
+      <a href="ionic/ionic.html">IONIC</a>
+      <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+       
+      
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+      
+      
+      <button type="button" onclick="myFunction1()"> Clicca per vedere il risultato</button>
+  
+    
+    
+    
+      
+      <div id="id01" class="modal">
+        
+        <form class="modal-content animate" action="/action_page.php" method="post">
+          <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="icon.png" alt="Icon" class="icon">
+          </div>
+          
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+            
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            
+            <button type="submit">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+          
+          <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+      </div>
+      
+      <script>
+          // Get the modal
+          var modal = document.getElementById('id01');
+          
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+              if (event.target == modal) {
+                  modal.style.display = "none";
+                }
+            }
+            </script>
+  
+            <p id="demo"></p>
+            
+            <script src="test.js" type="text/javascript"></script>
+            <!--funzione di operazione tra 2 stringhe-->
+        <script>
+             function myFunction1(){
+        txt = "CIAO ";
+        txt += "!!!";
+        document.getElementById("demo").innerHTML = txt;
+             }
+        </script>
+  <!--JS PER RENDERE RESPONSIVE -->
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
     </script>
-    <script src="test.js" type="text/javascript"></script>
     
-    <button type="button" onclick="myFunction()"> Clicca per vedere il risultato</button>
-    <p id="test">test</p>
-</body>
-</html>
+  </body>
+  </html>
+  
