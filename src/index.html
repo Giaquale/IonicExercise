@@ -71,11 +71,12 @@
             <p id="demo"></p>
         <script>
           var txt = "CIAO  !!!";
-          var  revTxt = "!!! OIAC";
-            for (var i = txt.length() - 1; i >= 0; i--){
+          var  revTxt = "";
+          var i = txt.length;
+            for (i - 1; i >= 0; i--){
               revTxt = revTxt + txt.charAt(i);
               }
-            revTxt;
+            console.log(revTxt);
            
               </script>
         <script src="test.js" type="text/javascript"></script>
@@ -86,15 +87,15 @@
         
 
         // Ciao da Ale ;)
-        let change = document.getElementById('changeHere');
+        let change = document.getElementById('demo');
              
         if (change.length == 0) {
-            change.innerHTML = "CIAO !!!";
-            document.getElementById("demo").innerHTML = txt;
+            change.innerHTML = txt;
+         
         } else {
             //reverse here
             change.innerHTML = revTxt;
-            document.getElementById("demo").innerHTML = revTxt;
+           
         }
         // Ciao da Ale ;)
 
