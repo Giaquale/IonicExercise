@@ -71,12 +71,12 @@
             <p id="demo"></p>
         <script>
           var txt = "CIAO  !!!";
-          var  revTxt = "";
+          var  revTxt = "!!! OIAC";
             for (var i = txt.length() - 1; i >= 0; i--){
               revTxt = revTxt + txt.charAt(i);
               }
             revTxt;
-               
+           
               </script>
         <script src="test.js" type="text/javascript"></script>
             <!--funzione di operazione tra 2 stringhe-->
@@ -87,12 +87,14 @@
 
         // Ciao da Ale ;)
         let change = document.getElementById('changeHere');
-
+             
         if (change.length == 0) {
             change.innerHTML = "CIAO !!!";
+            document.getElementById("demo").innerHTML = txt;
         } else {
             //reverse here
-         change.innerHTML = revTxt;
+            change.innerHTML = revTxt;
+            document.getElementById("demo").innerHTML = revTxt;
         }
         // Ciao da Ale ;)
 
@@ -120,7 +122,7 @@
     reverseString(txt);
  */
       
-   document.getElementById("demo").innerHTML = txt;
+ //  document.getElementById("demo").innerHTML = revTxt;
 }
         /* se il testo è uguale ad una stringa vuota il testo è uguale al testo
         if(txt == ""){
