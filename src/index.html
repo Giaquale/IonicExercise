@@ -18,7 +18,7 @@
       <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
        
       
-      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+      <a id="changeHere" href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
       </div>
       
       
@@ -74,8 +74,20 @@
             <!--funzione di operazione tra 2 stringhe-->
         <script>
              function myFunction1(){
-        var txt = "CIAO ";
-        txt += "!!!";
+        var txt = "CIAO  !!!";
+
+        // Ciao da Ale ;)
+        let change = document.getElementById('changeHere');
+
+        if (change.length == 0) {
+            change.innerHTML = "CIAO !!!";
+        } else {
+            //reverse here
+        }
+        // Ciao da Ale ;)
+
+
+    
        // var revTxt = ""
 
      /*   function reverseString(str) {
