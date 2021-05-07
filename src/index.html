@@ -90,9 +90,9 @@
               var textnode2 = document.createTextNode(revTxt);
         // Ciao da Ale ;)
               let change = document.getElementById("demo");
-            var y=1
               
-                if (change.textContent == txt) {
+              
+                if (change.textContent == txt ) {
           
             //change.innerHTML = revTxt;
                     node.appendChild(textnode2);
@@ -101,7 +101,7 @@
              // $("p").append("<b>" + revTxt + "</b>");
           //});
         //});
-               } else {
+               } else  if (change.textContent == "" || change.textContent == revTxt) {
             //reverse here
             //change.innerHTML = txt;
                    node.appendChild(textnode);
@@ -111,17 +111,12 @@
               // $("p").append("<b>" + txt  + "</b>");
         //  });
         //});
-        } 
-
-       
-        
-        
+        } else {
+          
 
 
-    
+        }
       }
-    
-             
         </script>
   <!--JS PER RENDERE RESPONSIVE -->
   <script>
