@@ -63,19 +63,19 @@
       
             <hr>
             <label for="name"><b>Name</b></label>
-            <input id ="name"onkeyup="success()" type="text" placeholder="Enter Name"name="name" >
+            <input id ="name"onkeyup="success()" type="text" placeholder="Enter Name"name="name" required >
             
             <label for="lastName"><b>LastName</b></label>
-            <input id ="lastName" onkeyup="success()" type="text" placeholder="Enter LastName" name="lastName"  >
+            <input id ="lastName" onkeyup="success()" type="text" placeholder="Enter LastName" name="lastName" required  >
            
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="Enter Email" name="email" required>
       
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input id="psw" onkeyup="success()" type="password" placeholder="Enter Password" name="psw" required>
       
             <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            <input id="rpt-psw" onkeyup="success()"type="password" placeholder="Repeat Password" name="rpt-psw" required >
             
             <label>
               <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -165,15 +165,15 @@
     </script>
      <script type="text/javascript">
       function success() {
-      
-       
-  if(document.getElementById("name").value==="" || document.getElementById("lastName").value===""   ) { 
+      console.log(document.getElementById("psw").value);
+      console.log(document.getElementById("name").value);
+  if(document.getElementById("name").value==="" || document.getElementById("lastName").value==="" || document.getElementById("psw").value!==document.getElementById("rpt-psw").value|| document.getElementById("psw").value==="" || document.getElementById("rpt-psw").value==="" )  { 
            document.getElementById('button').disabled = true; 
        } else { 
            document.getElementById('button').disabled = false;
        }
-   }
  
+      }
 </script>
   </body>
   </html>
