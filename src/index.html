@@ -68,6 +68,9 @@
             <label for="lastName"><b>LastName</b></label>
             <input id ="lastName" onkeyup="success()" type="text" placeholder="Enter LastName" name="lastName" required  >
            
+            <label for="number"><b>Number</b></label>
+            <input id="number" onkeyup="success()" type="text" placeholder="Enter Number" name="number" required  >
+            
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="Enter Email" name="email" required>
       
@@ -164,16 +167,19 @@
     }
     </script>
      <script type="text/javascript">
+      var espressione = !str;//numero tipo per vedere che la funzione con i numeri funziona con le lettere no.
       function success() {
       console.log(document.getElementById("psw").value);
       console.log(document.getElementById("name").value);
-  if(document.getElementById("name").value==="" || document.getElementById("lastName").value==="" || document.getElementById("psw").value!==document.getElementById("rpt-psw").value|| document.getElementById("psw").value==="" || document.getElementById("rpt-psw").value==="" )  { 
+      console.log(document.getElementById("number").value);
+  if(document.getElementById("name").value==="" || document.getElementById("lastName").value==="" || document.getElementById("psw").value!==document.getElementById("rpt-psw").value|| document.getElementById("psw").value==="" || document.getElementById("rpt-psw").value==="" || parseInt(document.getElementById("number").value)!==parseInt(document.getElementById("number").value))  { 
            document.getElementById('button').disabled = true; 
        } else { 
            document.getElementById('button').disabled = false;
        }
  
       }
+      console.log(espressione)
 </script>
   </body>
   </html>
