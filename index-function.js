@@ -70,7 +70,7 @@ function success() {
     //REGEX NUMERI
     var num = /^[0-9]+$/
     //IF DI CONTROLLO DI INSERIMENTO CARATTERI
-    if (document.getElementById("name").value === "" || document.getElementById("lastName").value === "" || document.getElementById("psw").value !== document.getElementById("rpt-psw").value || document.getElementById("psw").value === "" || document.getElementById("rpt-psw").value === "" || !document.getElementById("number").value.match(num)|| !document.getElementById("email").value.match(mailformat) ) {
+    if (document.getElementById("name").value === "" || document.getElementById("lastName").value === "" || document.getElementById("psw").value !== document.getElementById("rpt-psw").value || document.getElementById("psw").value === "" || document.getElementById("rpt-psw").value === "" || !document.getElementById("number").value.match(num) || !document.getElementById("email").value.match(mailformat)) {
         document.getElementById('button').disabled = true;
     } else {
         document.getElementById('button').disabled = false;
