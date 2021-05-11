@@ -66,7 +66,7 @@ function success() {
     var rptpsw = document.getElementById("rpt-psw").value;
     var persona = [name, lastName, number, email, psw, rptpsw];
     //REGEX EMAIL
-    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z]+(?:\.[a-zA-Z]{2,3})$/;
+    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z]+(?:\.[a-zA-Z]{2,4})$/;
     //REGEX NUMERI
     var num = /^[0-9]+$/
     //IF DI CONTROLLO DI INSERIMENTO CARATTERI
