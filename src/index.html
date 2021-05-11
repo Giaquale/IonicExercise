@@ -23,14 +23,15 @@
       
       
       <button type="button" id="btn" onclick="myFunction1()"> Clicca per vedere il risultato</button>
-  
+      <button type="button" id="buttonProfile" onclick="success()"> Clicca per vedere il tuo profilo completo</button>
     
     
+      <p id="profilo"></p>
     
       
       <div id="id01" class="modal">
         
-        <form class="modal-content animate" action="/action_page.php" method="post">
+        <form class="modal-content animate" action="profile.html" method="post">
           <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             <img src="icon.png" alt="Icon" class="icon">
@@ -38,12 +39,12 @@
           
           <div class="container">
             <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input id="username"onkeyup="success()" type="text" placeholder="Enter Username" name="uname" required>
             
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input id="loginPassword" onkeyup="success()" type="password" placeholder="Enter Password" name="psw" required>
             
-            <button type="submit">Login</button>
+            <button id="buttonLogin" type="submit"disabled>Login</button>
             <label>
               <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
@@ -57,7 +58,7 @@
       </div>
       <div id="id02" class="modal">
         <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-        <form class="modal-content" action="/action_page.php">
+        <form class="modal-content" action="index.html" method="post">
           <div class="container">
             <h1>Sign Up</h1>
       
@@ -72,7 +73,7 @@
             <input id="number" onkeyup="success()" type="text" placeholder="Enter Number" name="number" required  >
             
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <input id="email" type="text" onkeyup="success()" placeholder="Enter Email" name="email" required>
       
             <label for="psw"><b>Password</b></label>
             <input id="psw" onkeyup="success()" type="password" placeholder="Enter Password" name="psw" required>
@@ -167,7 +168,7 @@
     }
     </script>
      <script type="text/javascript">
-      var espressione = !str;//numero tipo per vedere che la funzione con i numeri funziona con le lettere no.
+     
       function success() {
       console.log(document.getElementById("psw").value);
       console.log(document.getElementById("name").value);
@@ -176,10 +177,43 @@
            document.getElementById('button').disabled = true; 
        } else { 
            document.getElementById('button').disabled = false;
-       }
  
+  
+       }
+//salvo tutti gli elementi in delle variabili
+var name = document.getElementById("name").value;
+var lastName = document.getElementById("lastName").value;
+var number = document.getElementById("number").value;
+var email = document.getElementById("email").value;
+var psw = document.getElementById("psw").value;
+var rptpsw = document.getElementById("rpt-psw").value;
+console.log(name)
+      
+//salvo tutte le variabili in un array di persona
+      var persona = [name,lastName,number,email,psw,rptpsw]
+      console.log(persona)
+      //if che dovrebbe dare un blocco al login e disabilitare il bottone se l username e la password del login non corrispondono alla mail e la password di registrazione
+      if(document.getElementById("username").value===email && document.getElementById("loginPassword").value===psw )  { 
+           document.getElementById('buttonLogin').disabled = false; 
+       } else { 
+           document.getElementById('buttonLogin').disabled = true;
+          }
+          console.log(document.getElementById("loginPassword").value)
+          console.log(document.getElementById("username").value)
+
+           //creazione bottone profilo completo con funzione e controllo
+ 
+         // if(document.getElementById('buttonProfile').click == true){
+              document.getElementById("profilo").innerHTML = persona;
+//}else{
+ // document.getElementById("profilo").innerHTML = persona;
       }
-      console.log(espressione)
+
+  //  }
+      </script>
+     
+      
+      
 </script>
   </body>
   </html>
