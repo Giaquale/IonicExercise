@@ -80,7 +80,7 @@ function success() {
 
 
     //if che dovrebbe dare un blocco al login e disabilitare il bottone se l username e la password del login non corrispondono alla mail e la password di registrazione
-    if (document.getElementById("username").value === email && document.getElementById("loginPassword").value === psw) {
+    if (document.getElementById("username").value.toLowerCase() === email.toLowerCase() && document.getElementById("loginPassword").value === psw) {
         document.getElementById('buttonLogin').disabled = false;
     } else {
         document.getElementById('buttonLogin').disabled = true;
