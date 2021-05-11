@@ -1,10 +1,8 @@
 
-// Get the modal
-
-
+// MODAL
 var modal = document.getElementById('id01');
 var modal = document.getElementById('id02');
-// When the user clicks anywhere outside of the modal, close it
+// CHIUSURA MODAL
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -12,7 +10,7 @@ window.onclick = function (event) {
 }
 
 
-//reverse
+//REVERSE
 var txt = "CIAO  !!!";
 var revTxt = "";
 var i = txt.length;
@@ -21,7 +19,7 @@ for (i - 1; i >= 0; i--) {
 }
 console.log(revTxt);
 
-
+//FUNZIONE DEL BOTTONE PER IL REVERSE
 function myFunction1() {
     var node = document.createElement("P");
     var textnode = document.createTextNode(txt);
@@ -45,7 +43,7 @@ function myFunction1() {
 }
 
 
-
+//FUNZIONE PER RENDERE LA PAGINA RESPONSIVE
 function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -57,8 +55,9 @@ function myFunction() {
 
 
 }
-
+//FUNZIONE DI CONTROLLI LOGIN E REGISTRAZIONE
 function success() {
+    //VARIABILI CHE PRENDI DA QUEL CHE SCRIVE L'UTENTE
     var name = document.getElementById("name").value;
     var lastName = document.getElementById("lastName").value;
     var number = document.getElementById("number").value;
@@ -66,8 +65,12 @@ function success() {
     var psw = document.getElementById("psw").value;
     var rptpsw = document.getElementById("rpt-psw").value;
     var persona = [name, lastName, number, email, psw, rptpsw];
-    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (document.getElementById("name").value === "" || document.getElementById("lastName").value === "" || document.getElementById("psw").value !== document.getElementById("rpt-psw").value || document.getElementById("psw").value === "" || document.getElementById("rpt-psw").value === "" || parseInt(document.getElementById("number").value) !== parseInt(document.getElementById("number").value)|| !document.getElementById("email").value.match(mailformat) ) {
+    //REGEX EMAIL
+    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-2,3]+)*$/;
+    //REGEX NUMERI
+    var num = /^[0-9]+$/
+    //IF DI CONTROLLO DI INSERIMENTO CARATTERI
+    if (document.getElementById("name").value === "" || document.getElementById("lastName").value === "" || document.getElementById("psw").value !== document.getElementById("rpt-psw").value || document.getElementById("psw").value === "" || document.getElementById("rpt-psw").value === "" || !document.getElementById("number").value.match(num)|| !document.getElementById("email").value.match(mailformat) ) {
         document.getElementById('button').disabled = true;
     } else {
         document.getElementById('button').disabled = false;
