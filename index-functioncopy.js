@@ -71,13 +71,35 @@ function success() {
     //REGEX EMAIL
     var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z]+(?:\.[a-zA-Z]{2,4})$/;
     //REGEX NUMERI
-    var num = /^[0-9]+$/
+    var num = /s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/ //^[0-9]+$/
+    
+    var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#.\$%\^&\*])(?=.{8,})");
     //IF DI CONTROLLO DI INSERIMENTO CARATTERI
-    if (name === "" || lastName === "" || psw !== rptpsw || psw === "" || rptpsw === "" || !number.match(num) || !email.match(mailformat)) {
+    if (name === "" || lastName === "" || psw !== rptpsw || psw === "" || rptpsw === "" || !psw.match(strongRegex)|| !number.match(num) || !email.match(mailformat)) {
         signupbtn.disabled = true;
     } else {
         signupbtn.disabled = false;
 
+
+    }
+
+    var y = document.getElementById("psw") ;
+    if (y.type === "password") {
+      y.type = "text";
+    } else {
+      y.type = "password";
+    }
+    var z = document.getElementById("rpt-psw") ;
+    if (z.type === "password") {
+      z.type = "text";
+    } else {
+      z.type = "password";
+    }
+    var l = document.getElementById("loginPassword") ;
+    if (l.type === "password") {
+      l.type = "text";
+    } else {
+      l.type = "password";
     }
     //FUNZIONE CHE VEDE IL CLICK DI REGISTRAZIONE
     signupbtn.onclick = function () {
@@ -131,7 +153,8 @@ function success() {
     }
 
 
-
+  
+  
 
 
 }

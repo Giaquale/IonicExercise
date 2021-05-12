@@ -47,7 +47,7 @@
                 <label for="psw"><b>Password</b></label>
                 <input id="loginPassword" onkeyup="success()" type="password" placeholder="Enter Password" name="psw"
                     required>
-
+                    <input type="checkbox" onclick="success()">Show Password
                 <button id="buttonLogin" type="button" disabled>Login</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -84,10 +84,12 @@
 
                 <label for="psw"><b>Password</b></label>
                 <input id="psw" onkeyup="success()" type="password" placeholder="Enter Password" name="psw" required>
+            
 
                 <label for="psw-repeat"><b>Repeat Password</b></label>
                 <input id="rpt-psw" onkeyup="success()" type="password" placeholder="Repeat Password" name="rpt-psw"
                     required>
+                    <input type="checkbox" onclick="success()">Show Password
 
                 <label>
                     <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
