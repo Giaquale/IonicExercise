@@ -64,7 +64,7 @@ function success() {
     var email = document.getElementById("email").value;
     var psw = document.getElementById("psw").value;
     var rptpsw = document.getElementById("rpt-psw").value;
-    var persona = "";
+    var persona = "ip";
     var d = "";
     var user = "";
     var username = document.getElementById("username").value;
@@ -89,6 +89,20 @@ function success() {
         user = new Map([
             [d, persona]
         ]);
+        var keys = [...user.keys()];
+        console.log(keys);
+        var roles = [...user.values()];
+        console.log(roles);
+        console.log(d)
+        console.log(user)
+        var node1 = document.createElement("P");
+        var node2 = document.createElement("P");
+        var date = document.createTextNode(d);
+        var profile = document.createTextNode("Data di creazione : " + keys + " Dati Profilo: " + roles);
+        node1.appendChild(profile);
+        document.getElementById("buttonDate").appendChild(node1);
+        node2.appendChild(date);
+        document.getElementById("buttonProfile").appendChild(node2);
 
     };
 
@@ -111,7 +125,10 @@ function success() {
         console.log(user)
     }
 
-    
+    var node1 = document.createElement("P");
+    var date = document.createTextNode(d);
+    node1.appendChild(date);
+    document.getElementById("buttonDate").appendChild(node1);
     console.log(document.getElementById("loginPassword").value)
     console.log(document.getElementById("username").value)
 
