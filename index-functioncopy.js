@@ -89,20 +89,26 @@ function success() {
         user = new Map([
             [d, persona]
         ]);
-        var keys = [...user.keys()];
-        console.log(keys);
-        var roles = [...user.values()];
-        console.log(roles);
-        console.log(d)
-        console.log(user)
-        var node1 = document.createElement("P");
-        var node2 = document.createElement("P");
-        var date = document.createTextNode(d);
-        var profile = document.createTextNode("Data di creazione : " + keys + " Dati Profilo: " + roles);
-        node1.appendChild(profile);
-        document.getElementById("buttonDate").appendChild(node1);
-        node2.appendChild(date);
-        document.getElementById("buttonProfile").appendChild(node2);
+        //DETTAGLI PROFILLO NEI BUTTON
+        document.getElementById('btnProfile').onclick = function () {
+            var keys = [...user.keys()];
+            console.log(keys);
+            var roles = [...user.values()];
+            console.log(roles);
+            console.log(d)
+            console.log(user)
+
+            var node1 = document.createElement("P");
+            var profile = document.createTextNode("Data di creazione : " + keys + " Dati Profilo: " + roles);
+            node1.appendChild(profile);
+            document.getElementById("buttonDate").appendChild(node1);
+        }
+        document.getElementById('btnDate').onclick = function () {
+            var node2 = document.createElement("P");
+            var date = document.createTextNode(d);
+            node2.appendChild(date);
+            document.getElementById("buttonProfile").appendChild(node2);
+        }
 
     };
 
@@ -125,12 +131,7 @@ function success() {
         console.log(user)
     }
 
-    var node1 = document.createElement("P");
-    var date = document.createTextNode(d);
-    node1.appendChild(date);
-    document.getElementById("buttonDate").appendChild(node1);
-    console.log(document.getElementById("loginPassword").value)
-    console.log(document.getElementById("username").value)
+
 
 
 
