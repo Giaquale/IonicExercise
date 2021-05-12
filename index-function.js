@@ -64,6 +64,7 @@ function success() {
     var email = document.getElementById("email").value;
     var psw = document.getElementById("psw").value;
     var rptpsw = document.getElementById("rpt-psw").value;
+    var signupbtn =   document.getElementById('signupbtn');
     var persona = "ip";
     var d = "";
     var user = "";
@@ -74,17 +75,17 @@ function success() {
     //REGEX NUMERI
     var num = /^[0-9]+$/
     //IF DI CONTROLLO DI INSERIMENTO CARATTERI
-    if (document.getElementById("name").value === "" || document.getElementById("lastName").value === "" || document.getElementById("psw").value !== document.getElementById("rpt-psw").value || document.getElementById("psw").value === "" || document.getElementById("rpt-psw").value === "" || !document.getElementById("number").value.match(num) || !document.getElementById("email").value.match(mailformat)) {
-        document.getElementById('signupbtn').disabled = true;
+    if (name === "" || lastName === "" || psw !== rptpsw || psw === "" || rptpsw === "" || !number.match(num) || !email.match(mailformat)) {
+        signupbtn.disabled = true;
     } else {
-        document.getElementById('signupbtn').disabled = false;
+        signupbtn.disabled = false;
 
     }
     //FUNZIONE CHE VEDE IL CLICK DI REGISTRAZIONE
-    document.getElementById('signupbtn').onclick = function () {
+    signupbtn.onclick = function () {
         alert("REGISTRAZIONE EFFETTUATA");
         d = new Date();
-        document.getElementById("email").value;
+        email;
         persona = [name, lastName, number, email, psw, rptpsw];
         user = new Map([
             [d, persona]
@@ -101,13 +102,13 @@ function success() {
             var node1 = document.createElement("P");
             var profile = document.createTextNode("Data di creazione : " + keys + " Dati Profilo: " + roles);
             node1.appendChild(profile);
-            document.getElementById("buttonDate").appendChild(node1);
+            document.getElementById("buttonProfile").appendChild(node1);
         }
         document.getElementById('btnDate').onclick = function () {
             var node2 = document.createElement("P");
             var date = document.createTextNode(d);
             node2.appendChild(date);
-            document.getElementById("buttonProfile").appendChild(node2);
+            document.getElementById("buttonDate").appendChild(node2);
         }
 
     };
