@@ -117,8 +117,8 @@ function success() {
         document.getElementById('buttonLogin').onclick = function () {
             alert("LOGIN EFFETTUATO" + " " + name.toUpperCase() + " " + lastName.toUpperCase());
             document.getElementById('btn').disabled = false;
-            document.getElementById('buttonProfile').disabled = false;
-            document.getElementById('buttonDate').disabled = false;
+            document.getElementById('btnProfile').disabled = false;
+            document.getElementById('btnDate').disabled = false;
 
         }
         console.log(d)
