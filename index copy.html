@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- RICHIAMO AL CSS E ALLA PAGINA CSS-->
+    <link rel="stylesheet" href="stylescopy.css">
+
+<body>
+
+    <!-- NAVBAR CON HREF ALLE ALTRE PAGINE-->
+    <div class="topnav" id="myTopnav">
+        <a href="js/js.html">JS</a>
+        <a href="slide/slide.html">SLIDE</a>
+        <a href="ionic/ionic.html">IONIC</a>
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
+
+        <a id="changeHere" href="javascript:void(0);" style="font-size:15px;" class="icon"
+            onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <!-- BOTTONI SOTTO LE NAVBAR-->
+    <button type="button" id="btn" onclick="myFunction1()"> Clicca per vedere il risultato</button>
+    <button type="button" id="buttonProfile" onclick="buttonProfile()"> Clicca per vedere il tuo profilo
+        completo</button>
+
+    <!-- rISULTATI AI CLICK DEI BOTTONI-->
+    <p id="profilo"></p>
+    <p id="demo"></p>
+
+    <!-- MODAL LOGIN-->
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate"  method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                    title="Close Modal">&times;</span>
+                <img src="icon.png" alt="Icon" class="icon">
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input id="username" onkeyup="success()" type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input id="loginPassword" onkeyup="success()" type="password" placeholder="Enter Password" name="psw"
+                    required>
+
+                <button id="buttonLogin" type="submit" disabled>Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                    class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+
+    <!-- MODAL REGISTRAZIONE -->
+    <div id="id02" class="modal">
+        <form class="modal-content animate"  method="post">
+            <div class="container">
+                <h1>Sign Up</h1>
+
+                <hr>
+                <label for="name"><b>Name</b></label>
+                <input id="name" onkeyup="success()" type="text" placeholder="Enter Name" name="name" required>
+
+                <label for="lastName"><b>LastName</b></label>
+                <input id="lastName" onkeyup="success()" type="text" placeholder="Enter LastName" name="lastName"
+                    required>
+
+                <label for="number"><b>Number</b></label>
+                <input id="number" onkeyup="success()" type="text" placeholder="Enter Number" name="number" required>
+
+                <label for="email"><b>Email</b></label>
+                <input id="email" type="text" onkeyup="success()" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input id="psw" onkeyup="success()" type="password" placeholder="Enter Password" name="psw" required>
+
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input id="rpt-psw" onkeyup="success()" type="password" placeholder="Repeat Password" name="rpt-psw"
+                    required>
+
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                </label>
+
+                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                        class="cancelbtn">Cancel</button>
+                    <button id="signupbtn" type="button" class="signupbtn" disabled>Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- RICHIAMO ALLE FUNZIONI E ALLA PAGINA JS-->
+    <script src="index-functioncopy.js">
+
+    </script>
+
+
+</body>
+
+</html>

@@ -110,7 +110,7 @@
 
   <p id="demo"></p>
 
-  
+
   <script>
     //reverse
     var txt = "CIAO  !!!";
@@ -171,6 +171,10 @@
       var psw = document.getElementById("psw").value;
       var rptpsw = document.getElementById("rpt-psw").value;
       var persona = [name, lastName, number, email, psw, rptpsw]
+      var d = ""
+      var user = new Map([
+        [d, persona]
+      ]);
 
       if (document.getElementById("name").value === "" || document.getElementById("lastName").value === "" || document.getElementById("psw").value !== document.getElementById("rpt-psw").value || document.getElementById("psw").value === "" || document.getElementById("rpt-psw").value === "" || parseInt(document.getElementById("number").value) !== parseInt(document.getElementById("number").value)) {
         document.getElementById('button').disabled = true;
@@ -185,6 +189,8 @@
         document.getElementById('buttonLogin').disabled = false;
       } else {
         document.getElementById('buttonLogin').disabled = true;
+        d = new Date();
+        console.log(d)
       }
       console.log(document.getElementById("loginPassword").value)
       console.log(document.getElementById("username").value)

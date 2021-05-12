@@ -74,37 +74,41 @@ function success() {
     var num = /^[0-9]+$/
     //IF DI CONTROLLO DI INSERIMENTO CARATTERI
     if (document.getElementById("name").value === "" || document.getElementById("lastName").value === "" || document.getElementById("psw").value !== document.getElementById("rpt-psw").value || document.getElementById("psw").value === "" || document.getElementById("rpt-psw").value === "" || !document.getElementById("number").value.match(num) || !document.getElementById("email").value.match(mailformat)) {
-        document.getElementById('button').disabled = true;
+        document.getElementById('signupbtn').disabled = true;
     } else {
-        document.getElementById('button').disabled = false;
-       /* d = new Date();
+        document.getElementById('signupbtn').disabled = false;
+        /* d = new Date();
+         persona = [name, lastName, number, email, psw, rptpsw];
+         user = new Map([
+             [d, persona]
+           //  document.getElementById("profilo").innerHTML = persona;
+         ]);*/
+    }
+
+    document.getElementById('signupbtn').onclick = function () {
+        alert("REGISTRAZIONE EFFETTUATA");
+        d = new Date();
+        document.getElementById("email").value;
         persona = [name, lastName, number, email, psw, rptpsw];
         user = new Map([
             [d, persona]
-          //  document.getElementById("profilo").innerHTML = persona;
-        ]);*/
-    }
-
+        ]);
+    };
 
     //if che dovrebbe dare un blocco al login e disabilitare il bottone se l username e la password del login non corrispondono alla mail e la password di registrazione
     if (document.getElementById("username").value.toLowerCase() === email.toLowerCase() && document.getElementById("loginPassword").value === psw) {
         document.getElementById('buttonLogin').disabled = false;
     } else {
         document.getElementById('buttonLogin').disabled = true;
-        
+
         console.log(d)
         console.log(user)
     }
     console.log(document.getElementById("loginPassword").value)
     console.log(document.getElementById("username").value)
 
-    document.getElementById('button').onclick = function() {
-        d = new Date();
-        persona = [name, lastName, number, email, psw, rptpsw];
-        user = new Map([
-            [d, persona]
-        ]);
-    };
+
+
 }
 
 
