@@ -2,12 +2,8 @@
 // MODAL
 var modal = document.getElementById('id01');
 var modal2 = document.getElementById('id02');
-// CHIUSURA MODAL
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+
+
 
 
 //REVERSE
@@ -57,6 +53,10 @@ function myFunction() {
 }
 //FUNZIONE DI CONTROLLI LOGIN E REGISTRAZIONE
 function success() {
+    //MODAL
+    var modal = document.getElementById('id01');
+    var modal2 = document.getElementById('id02');
+
     //VARIABILI CHE PRENDI DA QUEL CHE SCRIVE L'UTENTE
     var name = document.getElementById("name").value;
     var lastName = document.getElementById("lastName").value;
@@ -64,7 +64,7 @@ function success() {
     var email = document.getElementById("email").value;
     var psw = document.getElementById("psw").value;
     var rptpsw = document.getElementById("rpt-psw").value;
-    var signupbtn =   document.getElementById('signupbtn');
+    var signupbtn = document.getElementById('signupbtn');
     var persona = "";
     var d = "";
     var user = "";
