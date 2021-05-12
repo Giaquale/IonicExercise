@@ -53,9 +53,7 @@ function myFunction() {
 }
 //FUNZIONE DI CONTROLLI LOGIN E REGISTRAZIONE
 function success() {
-    //MODAL
-    var modal = document.getElementById('id01');
-    var modal2 = document.getElementById('id02');
+   
 
     //VARIABILI CHE PRENDI DA QUEL CHE SCRIVE L'UTENTE
     var name = document.getElementById("name").value;
