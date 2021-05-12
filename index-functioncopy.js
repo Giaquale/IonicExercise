@@ -1,7 +1,7 @@
 
 // MODAL
 var modal = document.getElementById('id01');
-var modal = document.getElementById('id02');
+var modal2 = document.getElementById('id02');
 // CHIUSURA MODAL
 window.onclick = function (event) {
     if (event.target == modal) {
@@ -67,7 +67,8 @@ function success() {
     var persona = "";
     var d = "";
     var user = "";
-
+    var username = document.getElementById("username").value;
+    var loginPsw = document.getElementById("loginPassword").value;
     //REGEX EMAIL
     var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z]+(?:\.[a-zA-Z]{2,4})$/;
     //REGEX NUMERI
@@ -77,14 +78,9 @@ function success() {
         document.getElementById('signupbtn').disabled = true;
     } else {
         document.getElementById('signupbtn').disabled = false;
-        /* d = new Date();
-         persona = [name, lastName, number, email, psw, rptpsw];
-         user = new Map([
-             [d, persona]
-           //  document.getElementById("profilo").innerHTML = persona;
-         ]);*/
-    }
 
+    }
+    //FUNZIONE CHE VEDE IL CLICK DI REGISTRAZIONE
     document.getElementById('signupbtn').onclick = function () {
         alert("REGISTRAZIONE EFFETTUATA");
         d = new Date();
@@ -93,17 +89,29 @@ function success() {
         user = new Map([
             [d, persona]
         ]);
+
     };
 
     //if che dovrebbe dare un blocco al login e disabilitare il bottone se l username e la password del login non corrispondono alla mail e la password di registrazione
-    if (document.getElementById("username").value.toLowerCase() === email.toLowerCase() && document.getElementById("loginPassword").value === psw) {
+    if ((username.toLowerCase() === email.toLowerCase() && username !== "") && (loginPsw === psw && loginPsw !== "")) {
         document.getElementById('buttonLogin').disabled = false;
     } else {
         document.getElementById('buttonLogin').disabled = true;
 
+
+        //FUNZIONE CHE VEDE IL CLICK DI LOGIN E se il login è effettuato abilita i tasti
+        document.getElementById('buttonLogin').onclick = function () {
+            alert("LOGIN EFFETTUATO" + " " + name.toUpperCase() + " " + lastName.toUpperCase());
+            document.getElementById('btn').disabled = false;
+            document.getElementById('buttonProfile').disabled = false;
+            document.getElementById('buttonDate').disabled = false;
+
+        }
         console.log(d)
         console.log(user)
     }
+
+    
     console.log(document.getElementById("loginPassword").value)
     console.log(document.getElementById("username").value)
 
