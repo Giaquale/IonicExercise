@@ -65,7 +65,7 @@ function success() {
     var psw = document.getElementById("psw").value;
     var rptpsw = document.getElementById("rpt-psw").value;
     var signupbtn =   document.getElementById('signupbtn');
-    var persona = "ip";
+    var persona = "";
     var d = "";
     var user = "";
     var username = document.getElementById("username").value;
